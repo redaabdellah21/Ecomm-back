@@ -1,5 +1,6 @@
 package org.pharmacie.appecommerce.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,9 @@ public class Product implements Serializable {
     private boolean selected;
     private boolean available;
     private String photoName;
+    @Transient
+    private int quantity=1;
     @ManyToOne
+    @JsonBackReference
     private Category category;
 }

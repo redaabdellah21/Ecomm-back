@@ -1,5 +1,6 @@
 package org.pharmacie.appecommerce.dao;
 
+import org.pharmacie.appecommerce.entities.Employee;
 import org.pharmacie.appecommerce.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
@@ -8,6 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RepositoryRestResource
@@ -20,4 +22,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     public List<Product> findByPromotionIsTrue();
     @RestResource(path = "/dispoProducts")
     public List<Product> findByAvailableIsTrue();
+
+    Optional<Product> findProductById(Long id);
 }

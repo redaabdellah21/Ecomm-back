@@ -32,7 +32,7 @@ public class AppECommerceApplication implements CommandLineRunner {
 
         repositoryRestConfiguration.exposeIdsFor(Product.class,Category.class);
 
-        categoryRepository.save(new Category(null,"Computers",null,null,null));
+        /*categoryRepository.save(new Category(null,"Computers",null,null,null));
         categoryRepository.save(new Category(null,"Printers",null,null,null));
         categoryRepository.save(new Category(null,"Smart phones",null, null,null));
         Random rnd=new Random();
@@ -48,7 +48,7 @@ public class AppECommerceApplication implements CommandLineRunner {
                 p.setPhotoName("unknown.png");
                 productRepository.save(p);
             }
-        });
+        });*/
     }
 
 }
