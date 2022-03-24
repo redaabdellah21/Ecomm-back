@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+// la logique du metier est developpée ici
 
 @Service
 public class ProductServiceimpl implements ProductService{
@@ -45,9 +46,15 @@ public class ProductServiceimpl implements ProductService{
         return productRepository.findProductById(id).orElseThrow(()->new UserNotFoundException("Product by id :"+id+"was not found"));
     }
 
+    @Transactional
     @Override
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
 
+    }
+    @Transactional
+    @Override
+    public Product findProductByName(String name) {
+        return productRepository.findProductByName(name).orElseThrow(()->new UserNotFoundException("Product by name :"+name+"was not found"));
     }
 }

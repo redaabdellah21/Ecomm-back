@@ -11,7 +11,7 @@ public interface CategorieService  {
 
     public List<String> findAllCategories();
     @Transactional
-    public  Category addCategory(String name);
+    public  Category addCategory(Category category);
 
     public Category updateCategory (Category category);
     public void deleteCategoryById (Long id);

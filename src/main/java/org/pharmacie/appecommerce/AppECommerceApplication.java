@@ -31,10 +31,11 @@ public class AppECommerceApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         repositoryRestConfiguration.exposeIdsFor(Product.class,Category.class);
-
-        /*categoryRepository.save(new Category(null,"Computers",null,null,null));
-        categoryRepository.save(new Category(null,"Printers",null,null,null));
-        categoryRepository.save(new Category(null,"Smart phones",null, null,null));
+/*
+        categoryRepository.save(new Category(null,"Médicaments sans ordonnance",null));
+        categoryRepository.save(new Category(null,"Hygiène & santé",null));
+        categoryRepository.save(new Category(null,"Maternité & bébé",null));
+        categoryRepository.save(new Category(null,"Nutrition, minceur & sport",null));
         Random rnd=new Random();
         categoryRepository.findAll().forEach(c->{
             for (int i = 0; i <10 ; i++) {

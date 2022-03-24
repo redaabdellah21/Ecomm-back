@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
+// la logique du metier est developpée ici
 
 @Service
 public class EmployeeServiceImpl implements EmployeeServices{
@@ -21,8 +22,6 @@ public class EmployeeServiceImpl implements EmployeeServices{
     @Override
     @Transactional
     public Employee AddEmployee(Employee employee){
-
-        employee.setEmployeeCode(UUID.randomUUID().toString());
         return employeeRepository.save(employee);
     }
     @Override

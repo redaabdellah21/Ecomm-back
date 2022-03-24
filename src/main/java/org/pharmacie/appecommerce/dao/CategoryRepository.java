@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
-
+// data access object pour avoir une relation avec la base de donnée
 @CrossOrigin("*")
 @RepositoryRestResource
 public interface CategoryRepository extends JpaRepository<Category, Long> {

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
+// mappe les requete Web
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/employee")
@@ -31,7 +33,7 @@ public class EmployeeController {
     @GetMapping(path="/photoEmployee/{id}",produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getPhoto (@PathVariable("id") Long id) throws Exception{
         Employee employeeById = employeeServices.findEmployeeById(id);
-        return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/ECommerce/employee/"+employeeById.getPhotName()));
+        return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/ECommerce/employee/"+employeeById.getPhotoName()));
     }
     @GetMapping("/find/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id")Long id){

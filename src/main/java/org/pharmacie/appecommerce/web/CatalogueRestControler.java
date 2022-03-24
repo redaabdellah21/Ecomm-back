@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+// mappe les requete Web
 @CrossOrigin("*")
 @RestController
 public class CatalogueRestControler {

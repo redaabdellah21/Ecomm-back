@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 import java.util.Optional;
 
+// data access object pour avoir une relation avec la base de donnée
 @CrossOrigin("*")
 @RepositoryRestResource
 public interface ProductRepository extends JpaRepository<Product, Long> {
@@ -24,4 +25,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     public List<Product> findByAvailableIsTrue();
 
     Optional<Product> findProductById(Long id);
+    Optional<Product> findProductByName(String Name);
 }

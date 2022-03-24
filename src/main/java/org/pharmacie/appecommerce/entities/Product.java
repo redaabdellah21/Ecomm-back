@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 
-
+// equivalent à une table dans la base de donnée
 @Entity
 @Data  @NoArgsConstructor  @AllArgsConstructor @ToString
 public class Product implements Serializable {

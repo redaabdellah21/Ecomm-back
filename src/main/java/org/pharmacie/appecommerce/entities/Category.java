@@ -10,14 +10,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 
+// equivalent à une table dans la base de donnée
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Category implements Serializable {
     @Id @GeneratedValue ( strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String categoryName;
     @OneToMany (mappedBy = "category")
-
     @JsonManagedReference
     private Collection<Product> products;
 

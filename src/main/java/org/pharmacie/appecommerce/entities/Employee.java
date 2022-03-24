@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 
+// equivalent à une table dans la base de donnée
 @Data
 @Entity
 public class Employee  implements Serializable {
@@ -16,7 +17,5 @@ public class Employee  implements Serializable {
     private String email;
     private String jobTitle;
     private String Phone;
-    private String photName;
-    @Column(nullable = false,updatable = false)
-    private String employeeCode;
+    private String photoName;
 }
